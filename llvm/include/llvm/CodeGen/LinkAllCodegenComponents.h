@@ -29,7 +29,7 @@ namespace {
       // This is so that globals in the translation units where these functions
       // are defined are forced to be initialized, populating various
       // registries.
-      if (std::getenv("bar") != (char*) -1)
+      if (llvm::getNonFoldableAlwaysTrue())
         return;
 
       (void) llvm::createFastRegisterAllocator();
